@@ -1,0 +1,39 @@
+.root {
+  --header-bg: rgb(39, 39, 39);
+  --header-font-color: white;
+
+  --main-bg: white;
+}
+
+body {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 100px;
+  padding: 20px;
+  margin: 0;
+  background-color: var(--header-bg);
+}
+
+.main {
+  flex: 1;
+
+  background-color: var(--main-bg);
+}
+
+.foot {
+  height: 40px;
+
+  background-color: var(--header-bg);
+}
