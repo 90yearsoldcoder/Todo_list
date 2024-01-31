@@ -73,12 +73,18 @@ class StorageAPI {
     localStorage.setItem(thing.tid.toString(), JSON.stringify(thing));
   }
 
-  static retrieve_todolist_byProject(project) {
-    let todolist = new TodoList();
+  static get_idlist_byProject(project) {
     let id_list;
     if (localStorage.getItem(project))
       id_list = JSON.parse(localStorage.getItem(project));
     else id_list = [];
+
+    return id_list;
+  }
+
+  static retrieve_todolist_byProject(project) {
+    let todolist = new TodoList();
+    let id_list = StorageAPI.get_idlist_byProject(project);
 
     for (let id of id_list) {
       let thing = Object.assign(
@@ -89,6 +95,13 @@ class StorageAPI {
     }
 
     return todolist;
+  }
+
+  static retrieve_todolist_byDate(date) {
+    let project_list = StorageAPI.get_ProjectsList();
+
+    for (let project of project_list) {
+    }
   }
 
   //remove a thing from storage
