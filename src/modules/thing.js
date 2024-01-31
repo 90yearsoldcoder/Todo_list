@@ -29,6 +29,8 @@ class Thing {
   }
 
   get dueDate() {
+    if (!(this._dueDate instanceof Date))
+      this._dueDate = new Date(this._dueDate);
     return this._dueDate;
   }
 
