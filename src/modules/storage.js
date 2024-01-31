@@ -37,6 +37,14 @@ class StorageAPI {
     }
   }
 
+  static ProjectList_rm(project) {
+    let projects_list = StorageAPI.get_ProjectsList();
+    if (projects_list.includes(project)) {
+      projects_list = projects_list.filter((item) => item != project);
+      localStorage.setItem("projects", JSON.stringify(projects_list));
+    }
+  }
+
   //get a projecthinglist which is a list(instead of string)
   static get_projectThingList(project) {
     if (!localStorage.getItem(project)) {
@@ -129,7 +137,13 @@ class StorageAPI {
 
   //remove a project from storage
   static remove_project(project) {
-    let id_list = StorageAPI.get_idlist_byProject(project);
+    //step1: clear the things in that project
+    let todolist = StorageAPI.retrieve_todolist_byProject(project).list;
+    for (let thing of todolist) localStorage.removeItem(thing.tid);
+    //step2: clear the project thing list
+    localStorage.removeItem(project);
+    //step3: remove the project from projectlist
+    StorageAPI.ProjectList_rm(project);
   }
 }
 
