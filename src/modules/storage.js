@@ -82,15 +82,21 @@ class StorageAPI {
     return id_list;
   }
 
+  static get_thing_byId(id) {
+    let thing = Object.assign(
+      new Thing(),
+      JSON.parse(localStorage.getItem(id))
+    );
+
+    return thing;
+  }
+
   static retrieve_todolist_byProject(project) {
     let todolist = new TodoList();
     let id_list = StorageAPI.get_idlist_byProject(project);
 
     for (let id of id_list) {
-      let thing = Object.assign(
-        new Thing(),
-        JSON.parse(localStorage.getItem(id))
-      );
+      let thing = Storage.get_thing_byId(id);
       todolist.add(thing);
     }
 
@@ -105,10 +111,7 @@ class StorageAPI {
       let id_list = StorageAPI.get_idlist_byProject(project);
 
       for (let id of id_list) {
-        let thing = Object.assign(
-          new Thing(),
-          JSON.parse(localStorage.getItem(id))
-        );
+        let thing = Storage.get_thing_byId(id);
         //console.log(thing.dueDate);
         //console.log(date);
         if (thing.dueDate.getTime() == date.getTime()) todolist.add(thing);
@@ -123,6 +126,9 @@ class StorageAPI {
     StorageAPI.ProjectThingList_rm(thing);
     localStorage.removeItem(thing.tid);
   }
+
+  //remove a project from storage
+  static remove_project(project) {}
 }
 
 export default StorageAPI;
