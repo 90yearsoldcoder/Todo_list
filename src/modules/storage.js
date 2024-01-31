@@ -55,7 +55,15 @@ class StorageAPI {
   }
 
   //remove a thing from a projectThingList
-  static ProjectThingList_rm(thing) {}
+  static ProjectThingList_rm(thing) {
+    let project_thing_list = StorageAPI.get_projectThingList(thing.project);
+    if (project_thing_list.includes(thing.tid)) {
+      project_thing_list = project_thing_list.filter(
+        (item) => item != thing.tid
+      );
+      localStorage.setItem(thing.project, JSON.stringify(project_thing_list));
+    }
+  }
 
   //thing: Thing Class
   static saveThing(thing) {
@@ -83,7 +91,11 @@ class StorageAPI {
     return todolist;
   }
 
-  static remove_thingById(id) {}
+  //remove a thing from storage
+  static remove_thing(thing) {
+    StorageAPI.ProjectThingList_rm(thing);
+    localStorage.removeItem(thing.tid);
+  }
 }
 
 export default StorageAPI;
