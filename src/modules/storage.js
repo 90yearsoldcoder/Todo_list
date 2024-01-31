@@ -98,10 +98,24 @@ class StorageAPI {
   }
 
   static retrieve_todolist_byDate(date) {
+    let todolist = new TodoList();
     let project_list = StorageAPI.get_ProjectsList();
 
     for (let project of project_list) {
+      let id_list = StorageAPI.get_idlist_byProject(project);
+
+      for (let id of id_list) {
+        let thing = Object.assign(
+          new Thing(),
+          JSON.parse(localStorage.getItem(id))
+        );
+        //console.log(thing.dueDate);
+        //console.log(date);
+        if (thing.dueDate.getTime() == date.getTime()) todolist.add(thing);
+      }
     }
+
+    return todolist;
   }
 
   //remove a thing from storage
