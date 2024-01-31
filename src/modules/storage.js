@@ -1,4 +1,5 @@
 import Thing from "./thing";
+import TodoList from "./todolist";
 
 class StorageAPI {
   static get_new_Tid() {
@@ -53,12 +54,36 @@ class StorageAPI {
     }
   }
 
+  //remove a thing from a projectThingList
+  static ProjectThingList_rm(thing) {}
+
   //thing: Thing Class
   static saveThing(thing) {
     StorageAPI.refresh_Tid(thing.tid);
     StorageAPI.ProjectsList_push(thing.project);
+    StorageAPI.ProjectThingList_push(thing);
     localStorage.setItem(thing.tid.toString(), JSON.stringify(thing));
   }
+
+  static retrieve_todolist_byProject(project) {
+    let todolist = new TodoList();
+    let id_list;
+    if (localStorage.getItem(project))
+      id_list = JSON.parse(localStorage.getItem(project));
+    else id_list = [];
+
+    for (let id of id_list) {
+      let thing = Object.assign(
+        new Thing(),
+        JSON.parse(localStorage.getItem(id))
+      );
+      todolist.add(thing);
+    }
+
+    return todolist;
+  }
+
+  static remove_thingById(id) {}
 }
 
 export default StorageAPI;

@@ -27,6 +27,14 @@ class Thing {
   set project(value) {
     this._project = value;
   }
+
+  get dueDate() {
+    return this._dueDate;
+  }
+
+  set dueDate(date) {
+    this._dueDate = date;
+  }
 }
 
 export default Thing;
