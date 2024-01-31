@@ -96,7 +96,7 @@ class StorageAPI {
     let id_list = StorageAPI.get_idlist_byProject(project);
 
     for (let id of id_list) {
-      let thing = Storage.get_thing_byId(id);
+      let thing = StorageAPI.get_thing_byId(id);
       todolist.add(thing);
     }
 
@@ -111,7 +111,7 @@ class StorageAPI {
       let id_list = StorageAPI.get_idlist_byProject(project);
 
       for (let id of id_list) {
-        let thing = Storage.get_thing_byId(id);
+        let thing = StorageAPI.get_thing_byId(id);
         //console.log(thing.dueDate);
         //console.log(date);
         if (thing.dueDate.getTime() == date.getTime()) todolist.add(thing);
@@ -128,7 +128,9 @@ class StorageAPI {
   }
 
   //remove a project from storage
-  static remove_project(project) {}
+  static remove_project(project) {
+    let id_list = StorageAPI.get_idlist_byProject(project);
+  }
 }
 
 export default StorageAPI;
