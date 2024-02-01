@@ -145,6 +145,13 @@ class StorageAPI {
     //step3: remove the project from projectlist
     StorageAPI.ProjectList_rm(project);
   }
+
+  static update_thing(thing) {
+    //revise infor
+
+    //save it
+    StorageAPI.saveThing(thing);
+  }
 }
 
 export default StorageAPI;
