@@ -3,6 +3,8 @@
   --header-font-color: white;
 
   --main-bg: white;
+
+  --modal-bg: grey;
 }
 
 body {
@@ -36,4 +38,21 @@ body {
   height: 40px;
 
   background-color: var(--header-bg);
+}
+
+.modal {
+  position: fixed;
+  background-color: var(--modal-bg);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.fade {
+  opacity: 0;
+}
+
+.show {
+  opacity: 0.45;
 }
