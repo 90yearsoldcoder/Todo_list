@@ -28,6 +28,20 @@ class Thing {
     this._project = value;
   }
 
+  get title() {
+    return this._title;
+  }
+  set title(value) {
+    this._title = value;
+  }
+
+  get desc() {
+    return this._desc;
+  }
+  set desc(value) {
+    this._desc = value;
+  }
+
   get dueDate() {
     if (!(this._dueDate instanceof Date))
       this._dueDate = new Date(this._dueDate);
@@ -36,6 +50,20 @@ class Thing {
 
   set dueDate(date) {
     this._dueDate = date;
+  }
+
+  get pp() {
+    return this._pp;
+  }
+  set pp(value) {
+    this._pp = value;
+  }
+
+  get done() {
+    return this._done;
+  }
+  set done(value) {
+    this._done = value;
   }
 }
 
