@@ -1,0 +1,101 @@
+.newTask_container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  z-index: 1;
+  width: 400px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: var(--main-bg);
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Times New Roman", Times, serif;
+}
+
+.newPage-body {
+  padding: 1rem;
+}
+
+.newPage-header {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 2px solid grey;
+  text-align: left;
+}
+
+.newPage-title {
+  font-weight: bolder;
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  align-items: start;
+}
+
+.form-control {
+  width: calc(100% - 10px);
+  padding: 3px;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  outline: none;
+  border: 2px solid grey;
+  border-radius: 0.25rem;
+}
+
+.form-control:focus {
+  border-color: aqua;
+  box-shadow: 2px solid aqua;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 3px;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  outline: none;
+  border: 2px solid grey;
+  border-radius: 0.25rem;
+  background-color: var(--main-bg);
+}
+
+.NewPageform_foot {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin: 10px;
+}
+
+#AddNewTask {
+  background-color: red;
+  color: var(--header-font-color);
+  padding: 2px;
+  height: 40px;
+  width: 80px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid grey;
+  cursor: pointer;
+}
+
+#CloseNewTaskWindow {
+  color: var(--main-font-color);
+  padding: 2px;
+  height: 40px;
+  width: 80px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid grey;
+  cursor: pointer;
+}
