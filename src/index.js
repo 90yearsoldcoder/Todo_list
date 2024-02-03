@@ -2,7 +2,14 @@ import "./styles/outline.css";
 import StorageAPI from "../src/modules/storage";
 import Thing from "../src/modules/thing";
 import TodoList from "./modules/todolist";
+import load_outline from "./functions/outline.js";
+import load_newTask_page from "./functions/loadNewTaskPage.js";
 
+//load outline
+load_outline();
+load_newTask_page();
+
+//test block
 let t = new Thing(
   "ProjectA",
   "title 1",
