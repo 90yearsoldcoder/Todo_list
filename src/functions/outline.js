@@ -15,6 +15,12 @@ const load_outline = () => {
   const foot = document.createElement("div");
   foot.classList.add("foot");
   content.appendChild(foot);
+
+  const modal = document.createElement("div");
+  modal.classList.add("modal");
+  modal.id = "modalForAll";
+  modal.classList.add("fade");
+  content.appendChild(modal);
 };
 
 export default load_outline;
