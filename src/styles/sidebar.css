@@ -1,0 +1,32 @@
+.sidebar {
+  flex: 0 0 auto;
+  width: 250px;
+  background-color: var(--side-bar-bg);
+
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 20px 0px 20px 20px;
+}
+
+.sidebar_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  left: 30px;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.6rem;
+}
+
+.sidebar_title:hover {
+  background-color: var(--main-bg);
+}
+
+.sidebar-active {
+  background-color: var(--main-bg);
+}
