@@ -4,10 +4,12 @@ import Thing from "../src/modules/thing";
 import TodoList from "./modules/todolist";
 import load_outline from "./functions/outline.js";
 import load_newTask_page from "./functions/loadNewTaskPage.js";
+import loadSideBar from "./functions/loadSideBar.js";
 
 //load outline
 load_outline();
-load_newTask_page();
+//load_newTask_page();
+loadSideBar();
 
 //test block
 let t = new Thing(
