@@ -4,6 +4,8 @@
 
   --main-bg: white;
 
+  --side-bar-bg: rgb(185, 185, 185);
+
   --modal-bg: grey;
 }
 
@@ -22,7 +24,7 @@ body {
 }
 
 .header {
-  height: 100px;
+  height: 50px;
   padding: 20px;
   margin: 0;
   background-color: var(--header-bg);
@@ -30,8 +32,13 @@ body {
 
 .main {
   flex: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 
   background-color: var(--main-bg);
+  display: flex;
+  flex-direction: row;
 }
 
 .foot {
@@ -51,8 +58,10 @@ body {
 
 .fade {
   opacity: 0;
+  z-index: -1;
 }
 
 .show {
   opacity: 0.45;
+  z-index: 1;
 }
