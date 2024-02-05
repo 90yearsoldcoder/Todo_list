@@ -1,5 +1,6 @@
 import "../styles/sidebar.css";
 import sidebar_templete from "../html/sidebar.html";
+import updateProjectList from "../functions/updateProjectList";
 
 const remove_active = () => {
   let parentElement = document.querySelector(".sidebar");
@@ -25,6 +26,9 @@ const sidebar = () => {
     remove_active();
     today.classList.add("sidebar-active");
   });
+
+  const project_container = container.querySelector("#projects_container");
+  updateProjectList(project_container);
 
   return container;
 };
