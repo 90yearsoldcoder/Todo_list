@@ -1,0 +1,27 @@
+.addNewButton {
+  background-color: var(--main-bg);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: none;
+  font-size: 4rem;
+  padding-bottom: 4px;
+  margin: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0.2rem 0.2rem 0.2rem;
+  cursor: pointer;
+}
+
+.addNewButton:hover {
+  box-shadow: 0.25rem 0.25rem 0.25rem;
+  transform: translateY(-2px);
+}
+
+.addNewButton:active {
+  box-shadow: 0 1px;
+  transform: translateY(1px);
+}

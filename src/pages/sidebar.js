@@ -1,6 +1,7 @@
 import "../styles/sidebar.css";
 import sidebar_templete from "../html/sidebar.html";
 import updateProjectList from "../functions/updateProjectList";
+import addNewButton from "./addNewButton";
 
 const remove_active = () => {
   let parentElement = document.querySelector(".sidebar");
@@ -29,6 +30,9 @@ const sidebar = () => {
 
   const project_container = container.querySelector("#projects_container");
   updateProjectList(project_container);
+
+  const newButton = addNewButton();
+  container.appendChild(newButton);
 
   return container;
 };
