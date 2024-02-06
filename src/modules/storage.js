@@ -129,6 +129,24 @@ class StorageAPI {
     return todolist;
   }
 
+  static retrieve_todolist_byDone() {
+    let todolist = new TodoList();
+    let project_list = StorageAPI.get_ProjectsList();
+
+    for (let project of project_list) {
+      let id_list = StorageAPI.get_idlist_byProject(project);
+
+      for (let id of id_list) {
+        let thing = StorageAPI.get_thing_byId(id);
+        //console.log(thing.dueDate);
+        //console.log(date);
+        if (!thing.done) todolist.add(thing);
+      }
+    }
+
+    return todolist;
+  }
+
   //remove a thing from storage
   static remove_thing(thing) {
     StorageAPI.ProjectThingList_rm(thing);
