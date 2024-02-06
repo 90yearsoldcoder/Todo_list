@@ -2,9 +2,9 @@
   --header-bg: rgb(39, 39, 39);
   --header-font-color: white;
 
-  --main-bg: white;
+  --main-bg: rgb(219, 219, 219);
 
-  --side-bar-bg: rgb(185, 185, 185);
+  --side-bar-bg: rgb(184, 184, 184);
 
   --modal-bg: grey;
 }
