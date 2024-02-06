@@ -5,6 +5,7 @@ import addNewButton from "./addNewButton";
 import StorageAPI from "../modules/storage";
 import Thing from "../modules/thing";
 import TodoList from "../modules/todolist";
+import loadMainPanel from "../functions/loadMainPanel";
 
 const remove_active = () => {
   let parentElement = document.querySelector(".sidebar");
@@ -25,6 +26,7 @@ const sidebar = () => {
     inbox.classList.add("sidebar-active");
     //Todo: load all tasks(done) and show them in main_panel
     let todolist = StorageAPI.retrieve_todolist_byDone();
+    loadMainPanel(todolist);
   });
 
   const today = container.querySelector("#today");
