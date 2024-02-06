@@ -41,6 +41,33 @@ const sidebar = () => {
   const project_container = container.querySelector("#projects_container");
   updateProjectList(project_container);
 
+  //add new project button
+  const newProject = container.querySelector("#add_project");
+  const newProject_panel = container.querySelector("#addproject_container");
+  newProject.addEventListener("click", () => {
+    newProject.classList.toggle("active");
+    newProject_panel.classList.toggle("deactive");
+  });
+
+  //add/cancel new project form
+  const newProject_submit = container.querySelector("#addproject_submit");
+  const newProject_cancel = container.querySelector("#addproject_cancel");
+  newProject_submit.addEventListener("click", () => {
+    let title = container.querySelector("#new_project_title").value;
+    if (title == "") {
+      alert("Project Name cannot be blank");
+      return;
+    }
+    StorageAPI.ProjectsList_push(title);
+    newProject.classList.toggle("active");
+    newProject_panel.classList.toggle("deactive");
+    updateProjectList(project_container);
+  });
+  newProject_cancel.addEventListener("click", () => {
+    newProject.classList.toggle("active");
+    newProject_panel.classList.toggle("deactive");
+  });
+
   const newButton = addNewButton();
   container.appendChild(newButton);
 
