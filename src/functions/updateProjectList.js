@@ -10,6 +10,10 @@ const remove_active = () => {
 
 const updateProjectList = (container) => {
   let projectList = StorageAPI.get_ProjectsList();
+
+  //clear the previous projects
+  container.innerHTML = "";
+
   for (let project of projectList) {
     let project_div = document.createElement("div");
     project_div.classList.add("sidebar_title");
