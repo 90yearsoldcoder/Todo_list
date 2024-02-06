@@ -1,6 +1,16 @@
 import Thing from "./thing";
 import TodoList from "./todolist";
 
+function areSameDate(date1, date2) {
+  let d1 = new Date(date1.getTime());
+  let d2 = new Date(date2.getTime());
+
+  d1.setHours(0, 0, 0, 0);
+  d2.setHours(0, 0, 0, 0);
+
+  return d1.getTime() == d2.getTime();
+}
+
 class StorageAPI {
   static get_new_Tid() {
     if (!localStorage.getItem("tid")) {
@@ -120,9 +130,7 @@ class StorageAPI {
 
       for (let id of id_list) {
         let thing = StorageAPI.get_thing_byId(id);
-        //console.log(thing.dueDate);
-        //console.log(date);
-        if (thing.dueDate.getTime() == date.getTime()) todolist.add(thing);
+        if (areSameDate(thing.dueDate, date)) todolist.add(thing);
       }
     }
 
