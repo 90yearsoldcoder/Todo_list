@@ -24,7 +24,6 @@ const sidebar = () => {
   inbox.addEventListener("click", () => {
     remove_active();
     inbox.classList.add("sidebar-active");
-    //Todo: load all tasks(done) and show them in main_panel
     let todolist = StorageAPI.retrieve_todolist_byDone();
     loadMainPanel(todolist);
   });
@@ -34,6 +33,9 @@ const sidebar = () => {
     remove_active();
     today.classList.add("sidebar-active");
     //Todo: load todays' tasks and show them in main panel
+    let today_date = new Date();
+    let todolist = StorageAPI.retrieve_todolist_byDate(today_date);
+    loadMainPanel(todolist);
   });
 
   const project_container = container.querySelector("#projects_container");
