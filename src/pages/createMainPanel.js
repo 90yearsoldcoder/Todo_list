@@ -2,6 +2,7 @@ import "../styles/mainPanel.css";
 import TodoList from "../modules/todolist";
 import Thing from "../modules/thing";
 import { format } from "date-fns";
+import loadTaskDetail from "../functions/loadTaskDetail";
 
 const createOneTask = (thing) => {
   let task = document.createElement("div");
@@ -31,12 +32,14 @@ const createOneTask = (thing) => {
   rightpart.classList.add("taskPart_right");
   task.appendChild(rightpart);
 
-  let detailButton = document.createElement("div");
+  const detailButton = document.createElement("div");
   detailButton.classList.add("detailButton");
   detailButton.innerText = "DETAILS";
   rightpart.appendChild(detailButton);
   //add detail button listener
-  //..
+  detailButton.addEventListener("click", () => {
+    loadTaskDetail(thing);
+  });
 
   let dueDate = document.createElement("div");
   dueDate.classList.add("dueDate");
