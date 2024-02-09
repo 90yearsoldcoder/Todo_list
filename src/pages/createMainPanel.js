@@ -67,7 +67,10 @@ const createOneTask = (thing) => {
   remove.classList.add("task_icon");
   remove.innerHTML = "<i class='fa-solid fa-trash-can'>";
   //add change listener
-  //....
+  remove.addEventListener("click", () => {
+    StorageAPI.remove_thing(thing);
+    task.style.display = "none";
+  });
   rightpart.appendChild(remove);
 
   return task;
