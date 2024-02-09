@@ -3,6 +3,7 @@ import TodoList from "../modules/todolist";
 import Thing from "../modules/thing";
 import { format } from "date-fns";
 import loadTaskDetail from "../functions/loadTaskDetail";
+import StorageAPI from "../modules/storage";
 
 const createOneTask = (thing) => {
   let task = document.createElement("div");
@@ -25,7 +26,11 @@ const createOneTask = (thing) => {
   leftpart.appendChild(title);
   //Todo: add a listener: ('change', funtion)
   //change the title stytle and update thing's done status in backend
-  //....
+  checkbox.addEventListener("change", () => {
+    thing.done = checkbox.checked;
+    StorageAPI.saveThing(thing);
+    title.classList.toggle("off");
+  });
 
   /* ----------right part---------------- */
   let rightpart = document.createElement("div");

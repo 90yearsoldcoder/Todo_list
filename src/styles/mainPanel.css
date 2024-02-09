@@ -63,5 +63,12 @@
   color: white;
 }
 
+.task_title {
+}
+
+.task_title.off {
+  text-decoration: line-through;
+}
+
 .dueDate {
 }
