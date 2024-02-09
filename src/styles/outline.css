@@ -28,6 +28,13 @@ body {
   padding: 20px;
   margin: 0;
   background-color: var(--header-bg);
+
+  display: flex;
+}
+
+.logo {
+  color: var(--header-font-color);
+  font-size: 3rem;
 }
 
 .main {

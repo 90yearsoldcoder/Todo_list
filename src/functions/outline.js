@@ -8,6 +8,11 @@ const load_outline = () => {
   header.classList.add("header");
   content.appendChild(header);
 
+  const logo = document.createElement("div");
+  logo.classList.add("logo");
+  logo.innerText = "Todo List";
+  header.appendChild(logo);
+
   const main = document.createElement("div");
   main.classList.add("main");
   content.appendChild(main);
