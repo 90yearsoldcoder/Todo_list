@@ -18,12 +18,14 @@ const createOneTask = (thing) => {
   checkbox.classList.add("task_checkbox");
   checkbox.type = "checkbox";
   checkbox.id = thing.tid;
+  checkbox.checked = thing.done;
   leftpart.appendChild(checkbox);
 
   let title = document.createElement("div");
   title.classList.add("task_title");
   title.innerText = thing.title;
   leftpart.appendChild(title);
+  if (thing.done) title.classList.add("off");
   //Todo: add a listener: ('change', funtion)
   //change the title stytle and update thing's done status in backend
   checkbox.addEventListener("change", () => {
@@ -52,12 +54,14 @@ const createOneTask = (thing) => {
   rightpart.appendChild(dueDate);
 
   let change = document.createElement("div");
+  change.classList.add("task_icon");
   change.innerHTML = "<i class='fa-regular fa-pen-to-square'>";
   //add change listener
   //....
   rightpart.appendChild(change);
 
   let remove = document.createElement("div");
+  remove.classList.add("task_icon");
   remove.innerHTML = "<i class='fa-solid fa-trash-can'>";
   //add change listener
   //....

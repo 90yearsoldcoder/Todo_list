@@ -70,5 +70,13 @@
   text-decoration: line-through;
 }
 
+.task_checkbox {
+  cursor: pointer;
+}
+
+.task_icon {
+  cursor: pointer;
+}
+
 .dueDate {
 }
