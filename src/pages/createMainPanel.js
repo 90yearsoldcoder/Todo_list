@@ -4,6 +4,7 @@ import Thing from "../modules/thing";
 import { format } from "date-fns";
 import loadTaskDetail from "../functions/loadTaskDetail";
 import StorageAPI from "../modules/storage";
+import loadTaskChange from "../functions/loadTaskChange";
 
 const createOneTask = (thing) => {
   let task = document.createElement("div");
@@ -26,7 +27,7 @@ const createOneTask = (thing) => {
   title.innerText = thing.title;
   leftpart.appendChild(title);
   if (thing.done) title.classList.add("off");
-  //Todo: add a listener: ('change', funtion)
+  //add a listener: ('change', funtion)
   //change the title stytle and update thing's done status in backend
   checkbox.addEventListener("change", () => {
     thing.done = checkbox.checked;
@@ -57,7 +58,9 @@ const createOneTask = (thing) => {
   change.classList.add("task_icon");
   change.innerHTML = "<i class='fa-regular fa-pen-to-square'>";
   //add change listener
-  //....
+  change.addEventListener("click", () => {
+    loadTaskChange(thing, title, dueDate);
+  });
   rightpart.appendChild(change);
 
   let remove = document.createElement("div");

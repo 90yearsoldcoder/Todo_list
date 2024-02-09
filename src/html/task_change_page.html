@@ -1,0 +1,47 @@
+<div class="newPage-header">
+  <h5 class="newPage-title">New Task</h5>
+</div>
+<div class="newPage-body">
+  <div class="form-group">
+    <label for="taskTitle">Title:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="taskTitle"
+      maxlength="30"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="taskDesc">Description:</label>
+    <textarea
+      type="text"
+      class="form-control"
+      id="taskDesc"
+      rows="4"
+      required
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="taskDueDate">Due Date:</label>
+    <input
+      type="datetime-local"
+      class="form-control"
+      id="taskDueDate"
+      max="2099-01-01T00:00"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="taskPriority">Priority:</label>
+    <select id="taskPriority" class="custom-select" required>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  </div>
+  <div class="NewPageform_foot">
+    <button id="CloseNewTaskWindow">Close</button>
+    <button id="AddNewTask">Add Task</button>
+  </div>
+</div>
